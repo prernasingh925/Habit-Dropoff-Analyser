@@ -1,16 +1,33 @@
-# React + Vite
+# Habit Drop-off Analyser
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**AI-Powered Habit Loop Diagnostic for B2C Fintech PMs**
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/react-19-blue) ![Vite](https://img.shields.io/badge/vite-latest-purple) ![Gemini API](https://img.shields.io/badge/gemini-2.5--flash-red)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Overview
 
-## React Compiler
+Diagnose which stage of a 3-stage habit loop (Trigger → Routine → Reward) is breaking users' recurring behaviors—in under 5 minutes.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Problem:** PMs spend 2–3 weeks analyzing why D7 retention collapses (from 40%+ D1 to 15–25%).
 
-## Expanding the ESLint configuration
+**Solution:** Input drop-off % at each stage, get instant diagnosis + 3 specific experiments to test.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+✅ **Instant Diagnosis** — Identifies bottleneck stage (Trigger, Routine, or Reward)
+✅ **Why It's Broken** — AI-generated explanation of the causal chain
+✅ **Confidence Scores** — 3 transparent metrics (Diagnosis %, Fix Impact %, Experiment Quality %)
+✅ **3 Experiments** — Category-aware recommendations with hypothesis, metrics, expected impact
+✅ **Category-Aware** — Fintech, Food Delivery, Health, Shopping strategies
+✅ **Sample Scenarios** — Try PhonePe UPI, Swiggy Reorder, Health App examples
+
+## Quick Start
+```bash
+git clone https://github.com/prernasingh925/habit-dropoff-analyser.git
+cd habit-dropoff-analyser
+npm install
+```
+
+### Environment Setup
+
+Create `.env.local`:
