@@ -70,6 +70,13 @@ export default function Form({ onAnalyze, isLoading }) {
     setFormData(SAMPLE_SCENARIOS[key]);
   };
 
+  const getDropoffColor = (val) => {
+    const num = parseInt(val, 10) || 0;
+    if (num <= 20) return 'var(--low)';
+    if (num <= 40) return 'var(--medium)';
+    return 'var(--critical)';
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     onAnalyze(formData);
@@ -110,9 +117,20 @@ export default function Form({ onAnalyze, isLoading }) {
               </div>
               <div className="stage-inputs">
                 <input required name={`stage${num}.name`} value={formData[`stage${num}`].name} onChange={handleChange} placeholder="Step description" />
-                <div className="dropoff-input">
-                  <input required type="number" min="0" max="100" name={`stage${num}.dropoff`} value={formData[`stage${num}`].dropoff} onChange={handleChange} placeholder="%" />
-                  <span className="suffix">% drop</span>
+                <div className="dropoff-input-wrapper">
+                  <div className="dropoff-input">
+                    <input required type="number" min="0" max="100" name={`stage${num}.dropoff`} value={formData[`stage${num}`].dropoff} onChange={handleChange} placeholder="%" />
+                    <span className="suffix">% drop</span>
+                  </div>
+                  <div className="dropoff-bar-bg">
+                    <div 
+                      className="dropoff-bar-fill" 
+                      style={{ 
+                        width: `${Math.min(100, Math.max(0, parseInt(formData[`stage${num}`].dropoff) || 0))}%`,
+                        backgroundColor: getDropoffColor(formData[`stage${num}`].dropoff)
+                      }} 
+                    />
+                  </div>
                 </div>
               </div>
             </div>

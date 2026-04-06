@@ -130,6 +130,12 @@ input:focus, select:focus, textarea:focus {
   flex: 1;
 }
 
+.dropoff-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
 .dropoff-input {
   position: relative;
   width: 100px;
@@ -138,6 +144,19 @@ input:focus, select:focus, textarea:focus {
 .dropoff-input input {
   width: 100%;
   padding-right: 2.5rem;
+}
+
+.dropoff-bar-bg {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  width: 100px;
+}
+
+.dropoff-bar-fill {
+  height: 100%;
+  transition: all 0.3s ease;
 }
 
 .dropoff-input .suffix {
